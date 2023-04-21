@@ -21,7 +21,7 @@ public class WatchController {
 
 
     @GetMapping("/user")
-    public Page<WatchDto> getWatchesOfUser(@RequestParam(required = true) Long id,@RequestParam(name = "pageNumber",defaultValue = "0") Integer pageNumber,
+    public Page<WatchDto> getWatchesOfUser(@RequestParam Long id,@RequestParam(name = "pageNumber",defaultValue = "0") Integer pageNumber,
                                            @RequestParam(name = "pageSize",defaultValue = "1") Integer pageSize){
         return watchService.getPageOfWatches(id,PageRequest.of(pageNumber,pageSize));
     }

@@ -1,5 +1,6 @@
 package com.rolex.watchit.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.rolex.watchit.enums.TokenType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -28,6 +29,7 @@ public class Token {
 
   public boolean expired;
 
+  @JsonIgnore
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "user_id")
   public User user;

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface WatchRepository extends JpaRepository<Watch,Long> {
 
 
-    @Query(value = "SELECT * FROM WATCH" +
+    @Query(value = "SELECT * FROM watch " +
             "WHERE user_id = :userId",
         nativeQuery = true)
     Page<Watch> findAllByUserId(Long userId, Pageable pageable);
